@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BrowserTest {
 
     @Test
@@ -20,6 +22,8 @@ public class BrowserTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920,1080");
+
+        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver(options);
 
